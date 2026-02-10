@@ -1,4 +1,58 @@
-# Getting Started with Create React App
+# Josie Carine | Portfolio
+
+Portfolio personnel moderne avec thème sombre, accents néon lime et animations fluides.  
+Construit avec React et Framer Motion.
+
+## Déploiement sur GitHub Pages
+
+### 1. Initialiser Git (si pas déjà fait)
+
+```bash
+git init
+```
+
+### 2. Créer un dépôt GitHub
+
+1. Allez sur [github.com](https://github.com) et connectez-vous
+2. Cliquez sur **New repository**
+3. Nom du repo :
+   - Pour un site utilisateur à la racine : `josiecarine.github.io`
+   - Pour un projet : `portfolio` (l’URL sera `https://josiecarine.github.io/portfolio`)
+4. Ne cochez pas « Initialize with README » si le projet existe déjà
+
+### 3. Pousser le code
+
+```bash
+git add .
+git commit -m "Initial commit - Portfolio"
+git branch -M main
+git remote add origin https://github.com/JosieCarine/VOTRE-REPO.git
+git push -u origin main
+```
+
+Remplacez `VOTRE-REPO` par le nom du dépôt (`josiecarine.github.io` ou `portfolio`).
+
+### 4. Configurer l’URL de base (si repo = portfolio)
+
+Si votre dépôt s’appelle `portfolio`, modifiez `package.json` :
+
+```json
+"homepage": "https://josiecarine.github.io/portfolio"
+```
+
+### 5. Déployer
+
+```bash
+npm run deploy
+```
+
+Le site sera accessible à :
+- `https://josiecarine.github.io` (si repo `josiecarine.github.io`)
+- `https://josiecarine.github.io/portfolio` (si repo `portfolio`)
+
+---
+
+## Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 

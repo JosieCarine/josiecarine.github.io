@@ -1,0 +1,85 @@
+.skills {
+  padding: 6rem 2rem;
+  position: relative;
+}
+
+.skills__grid {
+  position: absolute;
+  inset: 0;
+  background-image:
+    linear-gradient(rgba(163, 230, 53, 0.02) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(163, 230, 53, 0.02) 1px, transparent 1px);
+  background-size: 60px 60px;
+  pointer-events: none;
+}
+
+.skills__container {
+  max-width: 1100px;
+  margin: 0 auto;
+  position: relative;
+  z-index: 1;
+}
+
+.skills__grid-cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(140px, 1fr));
+  gap: 1rem;
+  margin-top: 2rem;
+}
+
+.skills__card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 1.25rem 1rem;
+  background: rgba(255, 255, 255, 0.03);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid rgba(163, 230, 53, 0.15);
+  border-radius: 14px;
+  transition: all 0.3s ease;
+  cursor: default;
+}
+
+.skills__card:hover {
+  background: rgba(163, 230, 53, 0.08);
+  border-color: rgba(163, 230, 53, 0.4);
+  box-shadow: 0 8px 30px rgba(163, 230, 53, 0.15);
+}
+
+.skills__card-name {
+  font-weight: 600;
+  color: #fff;
+  font-size: 1rem;
+  text-align: center;
+}
+
+.skills__card-badge {
+  font-size: 0.7rem;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  padding: 0.2rem 0.5rem;
+  border-radius: 6px;
+  color: rgba(255, 255, 255, 0.7);
+}
+
+.skills__card-badge--language {
+  background: rgba(163, 230, 53, 0.2);
+  color: #a3e635;
+}
+
+.skills__card-badge--framework {
+  background: rgba(99, 102, 241, 0.2);
+  color: #818cf8;
+}
+
+.skills__card-badge--database {
+  background: rgba(236, 72, 153, 0.2);
+  color: #f472b6;
+}
+
+.skills__card-badge--tool {
+  background: rgba(251, 146, 60, 0.2);
+  color: #fb923c;
+}

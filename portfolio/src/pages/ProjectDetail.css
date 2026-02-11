@@ -46,7 +46,8 @@
   margin-bottom: 3rem;
 }
 
-.project-detail__image {
+.project-detail__image,
+.project-detail__media {
   width: 100%;
   height: auto;
   border-radius: 12px;
@@ -82,15 +83,22 @@
   font-weight: 500;
 }
 
-.project-detail__github {
-  color: #a3e635;
-  font-weight: 600;
-  text-decoration: none;
-  transition: color 0.3s ease;
+.project-detail__overview {
+  margin-top: 1.25rem;
 }
 
-.project-detail__github:hover {
-  color: #c6f046;
+.project-detail__overview h2 {
+  font-size: 1rem;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  color: rgba(255, 255, 255, 0.65);
+  margin: 0 0 0.4rem 0;
+}
+
+.project-detail__overview p {
+  margin: 0;
+  color: rgba(255, 255, 255, 0.85);
+  line-height: 1.7;
 }
 
 .project-detail__content {
@@ -135,6 +143,12 @@
 
 .project-detail__section li::marker {
   color: #a3e635;
+}
+
+
+.project-detail__media {
+  max-height: 420px;
+  object-fit: cover;
 }
 
 @media (max-width: 768px) {

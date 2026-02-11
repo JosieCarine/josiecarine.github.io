@@ -143,6 +143,10 @@ function Contact() {
               <strong>E-Mail:</strong>{' '}
               <a href="mailto:carinengaha@gmail.com">carinengaha@gmail.com</a>
             </p>
+            <p className="contact__phone">
+              <strong>Telefon:</strong>{' '}
+              <a href="tel:017634473237">0176 34473237</a>
+            </p>
             <p className="contact__location">
               <strong>Standort:</strong> Karlsbad, Deutschland
             </p>

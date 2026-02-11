@@ -53,11 +53,27 @@ function ProjectDetail() {
           </button>
 
           <div className="project-detail__header">
-            <img
-              src={project.image}
-              alt={project.title}
-              className="project-detail__image"
-            />
+            {project.headerMedia?.type === 'video' ? (
+              <video
+                className="project-detail__media"
+                poster={project.headerMedia.poster || project.image}
+                controls
+                preload="auto"
+                autoPlay
+                muted
+                loop
+                playsInline
+              >
+                <source src={project.headerMedia.src} type="video/mp4" />
+                Ihr Browser unterstützt das Video-Format nicht.
+              </video>
+            ) : (
+              <img
+                src={project.image}
+                alt={project.title}
+                className="project-detail__image"
+              />
+            )}
             <div className="project-detail__header-content">
               <h1 className="project-detail__title">{project.title}</h1>
               <div className="project-detail__tech">
@@ -67,15 +83,11 @@ function ProjectDetail() {
                   </span>
                 ))}
               </div>
-              {project.github && (
-                <a
-                  href={project.github}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="project-detail__github"
-                >
-                  GitHub ↗
-                </a>
+              {details?.overview && (
+                <div className="project-detail__overview">
+                  <h2>Überblick</h2>
+                  <p>{details.overview}</p>
+                </div>
               )}
             </div>
           </div>
@@ -83,11 +95,6 @@ function ProjectDetail() {
           <div className="project-detail__content">
             {details && (
               <>
-                <section className="project-detail__section">
-                  <h2>Überblick</h2>
-                  <p>{details.overview}</p>
-                </section>
-
                 <section className="project-detail__section">
                   <h2>Was ich gemacht habe</h2>
                   <ul>

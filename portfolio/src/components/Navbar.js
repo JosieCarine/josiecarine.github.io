@@ -4,12 +4,12 @@ import { motion } from 'framer-motion';
 import './Navbar.css';
 
 const navLinks = [
-  { section: 'home', label: 'Home' },
-  { section: 'about', label: 'About' },
-  { section: 'skills', label: 'Skills' },
-  { section: 'projects', label: 'Projects' },
-  { section: 'experience', label: 'Experience' },
-  { section: 'contact', label: 'Contact' },
+  { section: 'home', label: 'Start' },
+  { section: 'about', label: 'Über mich' },
+  { section: 'skills', label: 'Kompetenzen' },
+  { section: 'experience', label: 'Erfahrung' },
+  { section: 'projects', label: 'Projekte' },
+  { section: 'contact', label: 'Kontakt' },
 ];
 
 function Navbar() {

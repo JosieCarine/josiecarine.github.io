@@ -9,6 +9,7 @@ const skills = [
   { name: 'C/C++', category: 'language' },
   { name: 'Dart', category: 'language' },
   { name: 'Elixir', category: 'language' },
+  { name: 'Bash', category: 'language' },
   { name: 'React', category: 'framework' },
   { name: 'Angular', category: 'framework' },
   { name: 'Node.js', category: 'framework' },
@@ -19,10 +20,16 @@ const skills = [
   { name: 'MongoDB', category: 'database' },
   { name: 'MariaDB', category: 'database' },
   { name: 'Git', category: 'tool' },
+  { name: 'GitHub', category: 'tool' },
+  { name: 'GitLab', category: 'tool' },
+  { name: 'Jenkins', category: 'tool' },
   { name: 'Docker', category: 'tool' },
   { name: 'CI/CD', category: 'tool' },
-  { name: 'Jenkins', category: 'tool' },
-  { name: 'GitLab', category: 'tool' },
+  { name: 'npm', category: 'tool' },
+  { name: 'Figma', category: 'design' },
+  { name: 'Adobe XD', category: 'design' },
+  { name: 'Adobe Photoshop', category: 'design' },
+  { name: 'Adobe Illustrator', category: 'design' },
 ];
 
 function Skills() {

@@ -45,6 +45,12 @@ export const experiencesData = [
     date: '02/2025 – 04/2025',
     tech: ['JavaScript', 'Animationen', 'Scrum', 'UI Optimierung'],
     image: '/images/experience/atelier-cover.jpg',
+    headerMedia: {
+      type: 'video',
+      src: '/images/experience/atelier.mp4',
+      poster: '/images/experience/atelier-cover.jpg',
+      caption: 'Digitale Galerie & Animationen',
+    },
     gallery: [
       '/images/experience/atelier-1.jpg',
       '/images/experience/atelier-2.jpg',

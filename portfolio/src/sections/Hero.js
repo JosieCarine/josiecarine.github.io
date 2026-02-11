@@ -2,8 +2,8 @@ import { motion } from 'framer-motion';
 import './Hero.css';
 
 const stats = [
-  { value: '10+', label: 'Projects' },
-  { value: '15+', label: 'Technologies' },
+  { value: '10+', label: 'Projekte' },
+  { value: '15+', label: 'Technologien' },
   { value: '100%', label: 'Motivation' },
 ];
 
@@ -35,7 +35,7 @@ function Hero() {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5, delay: 0.2 }}
           >
-            Software Developer | Informatik-Absolventin
+            Softwareentwicklerin | Informatik-Absolventin
           </motion.p>
           <motion.p
             className="hero__intro"
@@ -43,10 +43,9 @@ function Hero() {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5, delay: 0.3 }}
           >
-            Ich bin Informatik-Absolventin mit internationalem Hintergrund und
-            Abschluss an der Hochschule Worms. Mit Begeisterung entwickle ich
-            strukturierte, zuverlässige und benutzerfreundliche Softwarelösungen
-            im Web- und Full-Stack-Bereich.
+            Ich bin Informatik-Absolventin mit internationalem Hintergrund und Abschluss an der Hochschule Worms.
+            Mit Begeisterung entwickle ich strukturierte, zuverlässige und nutzerzentrierte Softwarelösungen im
+            Web- und Full-Stack-Bereich.
           </motion.p>
           <motion.div
             className="hero__buttons"
@@ -55,7 +54,7 @@ function Hero() {
             transition={{ duration: 0.5, delay: 0.4 }}
           >
             <a href="#projects" className="btn btn--primary">
-              View Projects
+              Projekte ansehen
             </a>
             <a
             href={`${process.env.PUBLIC_URL}/lebenslauf.pdf`}

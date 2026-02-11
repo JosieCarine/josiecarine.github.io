@@ -19,6 +19,14 @@ const checkIcon = (
   </svg>
 );
 
+const languages = ['Deutsch – C1', 'Englisch – B2', 'Französisch – Muttersprache'];
+const hobbies = [
+  'Malen auf Leinwand & Illustrationen zeichnen',
+  'Wandern & Natur fotografieren',
+  'Lesen',
+  'Reisen & neue Kulturen entdecken',
+];
+
 function About() {
   return (
     <section id="about" className="about">
@@ -85,6 +93,29 @@ function About() {
               <span className="about__decor-square" aria-hidden="true" />
             </div>
           </motion.div>
+        </div>
+
+        <div className="about__meta-grid">
+          <div className="about__meta-card">
+            <h3>Führerschein</h3>
+            <p>Klasse B</p>
+          </div>
+          <div className="about__meta-card">
+            <h3>Sprachen</h3>
+            <ul>
+              {languages.map((lang) => (
+                <li key={lang}>{lang}</li>
+              ))}
+            </ul>
+          </div>
+          <div className="about__meta-card">
+            <h3>Hobbys</h3>
+            <ul>
+              {hobbies.map((hobby) => (
+                <li key={hobby}>{hobby}</li>
+              ))}
+            </ul>
+          </div>
         </div>
       </motion.div>
     </section>

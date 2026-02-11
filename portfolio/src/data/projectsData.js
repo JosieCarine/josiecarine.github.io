@@ -1,40 +1,11 @@
 export const projectsData = [
   {
-    slug: 'fahrzeugverkaufssystem',
-    title: 'Full-Stack Fahrzeugverkaufssystem',
-    description:
-      'Webanwendung mit Angular, Node.js, MongoDB und MariaDB. Containerisierung mit Docker für eine skalierbare Architektur.',
-    tech: ['Angular', 'Node.js', 'MongoDB', 'MariaDB', 'Docker'],
-    image: 'https://images.unsplash.com/photo-1560958089-b8a1929cea89?w=600&h=400&fit=crop',
-    github: 'https://github.com/JosieCarine',
-    details: {
-      overview: 'Entwicklung einer vollständigen Webanwendung zur Verwaltung und zum Verkauf von Fahrzeugen.',
-      whatIDid: [
-        'Design und Implementierung der Frontend-Architektur mit Angular',
-        'RESTful API-Entwicklung mit Node.js und Express',
-        'Datenbankdesign mit MongoDB und MariaDB',
-        'Containerisierung der Anwendung mit Docker für einfaches Deployment',
-      ],
-      results: [
-        'Skalierbare und wartbare Full-Stack-Anwendung',
-        'Einfache Bereitstellung durch Docker-Container',
-        'Trennung von NoSQL (MongoDB) und SQL (MariaDB) je nach Datenmodell',
-      ],
-      learned: [
-        'Vertiefte Kenntnisse in Angular und TypeScript',
-        'Best Practices für Microservices-Architekturen',
-        'Docker und Container-Orchestrierung',
-      ],
-    },
-  },
-  {
     slug: 'cicd-evaluierung',
     title: 'CI/CD Evaluierungsprojekt',
     description:
-      'Bachelorprojekt: Analyse und Vergleich verschiedener CI/CD-Tools. Webanwendung mit Frontend-/Backend-Architektur und automatisierten Tests.',
+      'Bachelorprojekt zur Analyse und zum Vergleich verschiedener CI/CD-Plattformen inklusive Demo-Anwendung mit automatisierten Tests.',
     tech: ['CI/CD', 'Jenkins', 'Web App', 'Tests'],
-    image: 'https://images.unsplash.com/photo-1555949963-aa79dcee981c?w=600&h=400&fit=crop',
-    github: 'https://github.com/JosieCarine',
+    image: '/images/project/cicd.jpeg',
     details: {
       overview: 'Bachelorprojekt zur Evaluierung von CI/CD-Plattformen mit Entwicklung einer Demonstrations-Webanwendung.',
       whatIDid: [
@@ -59,10 +30,15 @@ export const projectsData = [
     slug: 'iot-wetterstation',
     title: 'IoT Wetterstation',
     description:
-      'Entwicklung einer Wetterstation mit Sensorintegration und grafischer Benutzeroberfläche zur Visualisierung von Sensordaten.',
+      'Entwicklung einer Wetterstation mit Sensorintegration und grafischer Oberfläche zur Visualisierung von Messwerten in Echtzeit.',
     tech: ['IoT', 'Python', 'Arduino', 'Sensoren'],
-    image: 'https://images.unsplash.com/photo-1532601224476-15c79f2f7a51?w=600&h=400&fit=crop',
-    github: 'https://github.com/JosieCarine',
+    image: '/images/project/iot-cover.png',
+    headerMedia: {
+      type: 'video',
+      src: '/images/project/iot-3.mp4',
+      poster: '/images/project/iot-cover.png',
+      caption: 'Interaktive Visualisierung der IoT-Wetterstation',
+    },
     details: {
       overview: 'Entwicklung einer vollständigen IoT-Lösung zur Erfassung und Visualisierung von Wetterdaten.',
       whatIDid: [
@@ -84,13 +60,72 @@ export const projectsData = [
     },
   },
   {
+    slug: 'fahrzeugverkaufssystem',
+    title: 'Full-Stack Fahrzeugverkaufssystem',
+    description:
+      'Full-Stack-Plattform zur Verwaltung und zum Verkauf von Fahrzeugen mit Angular, Node.js, MongoDB, MariaDB und Docker.',
+    tech: ['Angular', 'Node.js', 'MongoDB', 'MariaDB', 'Docker'],
+    image: 'https://images.unsplash.com/photo-1560958089-b8a1929cea89?w=600&h=400&fit=crop',
+    details: {
+      overview: 'Entwicklung einer vollständigen Webanwendung zur Verwaltung und zum Verkauf von Fahrzeugen.',
+      whatIDid: [
+        'Design und Implementierung der Frontend-Architektur mit Angular',
+        'RESTful API-Entwicklung mit Node.js und Express',
+        'Datenbankdesign mit MongoDB und MariaDB',
+        'Containerisierung der Anwendung mit Docker für einfaches Deployment',
+      ],
+      results: [
+        'Skalierbare und wartbare Full-Stack-Anwendung',
+        'Einfache Bereitstellung durch Docker-Container',
+        'Trennung von NoSQL (MongoDB) und SQL (MariaDB) je nach Datenmodell',
+      ],
+      learned: [
+        'Vertiefte Kenntnisse in Angular und TypeScript',
+        'Best Practices für Microservices-Architekturen',
+        'Docker und Container-Orchestrierung',
+      ],
+    },
+  },
+  {
+    slug: 'mobile-ecommerce-flutter',
+    title: 'Mobile E-Commerce (Flutter)',
+    description:
+      'Mobile Shopping-App auf Flutter-Basis mit responsivem UX-Design und performanter Architektur.',
+    tech: ['Flutter', 'Dart', 'Mobile'],
+    image: '/images/project/android_cover.png',
+    headerMedia: {
+      type: 'video',
+      src: '/images/project/android-03.mp4',
+      poster: '/images/project/android_cover.png',
+      caption: 'Flutter UI Showcase · Prototyp & Motion',
+    },
+    details: {
+      overview: 'Entwicklung einer mobilen E-Commerce-Anwendung mit Flutter für plattformübergreifende Nutzung.',
+      whatIDid: [
+        'Konzeption der Benutzeroberfläche und User Flow',
+        'Implementierung mit Flutter und Dart',
+        'Integration von Zahlungs- und Warenkorb-Funktionalität',
+        'Optimierung für verschiedene Bildschirmgrößen',
+      ],
+      results: [
+        'Benutzerfreundliches Mobile-Shopping-Erlebnis',
+        'Responsives Design für alle Geräte',
+        'Schnelle und flüssige App-Performance',
+      ],
+      learned: [
+        'Flutter Framework und Dart-Programmierung',
+        'Cross-Platform Mobile Development',
+        'UX-Design für E-Commerce-Anwendungen',
+      ],
+    },
+  },
+  {
     slug: 'telegram-esp32-led',
     title: 'Telegram-Bot & ESP32 LED-Matrix',
     description:
-      'IoT-Kommunikationssystem mit Telegram-Bot zur Fernkommunikation, Ansteuerung einer LED-Matrix über ESP32 und Visualisierung auf LED-Display.',
+      'IoT-Kommunikationssystem mit Telegram-Bot zur Fernsteuerung einer LED-Matrix über ESP32 samt Visualisierung auf dem Display.',
     tech: ['IoT', 'Telegram', 'ESP32', 'Python'],
     image: 'https://images.unsplash.com/photo-1518770660439-4636190af475?w=600&h=400&fit=crop',
-    github: 'https://github.com/JosieCarine',
     details: {
       overview: 'Entwicklung eines IoT-Systems zur Fernsteuerung einer LED-Matrix über Telegram.',
       whatIDid: [
@@ -112,41 +147,12 @@ export const projectsData = [
     },
   },
   {
-    slug: 'mobile-ecommerce-flutter',
-    title: 'Mobile E-Commerce (Flutter)',
-    description:
-      'Entwicklung einer mobilen Webanwendung für Online-Handel mit Fokus auf Benutzerfreundlichkeit und responsivem Design.',
-    tech: ['Flutter', 'Dart', 'Mobile'],
-    image: 'https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?w=600&h=400&fit=crop',
-    github: 'https://github.com/JosieCarine',
-    details: {
-      overview: 'Entwicklung einer mobilen E-Commerce-Anwendung mit Flutter für plattformübergreifende Nutzung.',
-      whatIDid: [
-        'Konzeption der Benutzeroberfläche und User Flow',
-        'Implementierung mit Flutter und Dart',
-        'Integration von Zahlungs- und Warenkorb-Funktionalität',
-        'Optimierung für verschiedene Bildschirmgrößen',
-      ],
-      results: [
-        'Benutzerfreundliche mobile Shopping-Experience',
-        'Responsives Design für alle Geräte',
-        'Schnelle und flüssige App-Performance',
-      ],
-      learned: [
-        'Flutter Framework und Dart-Programmierung',
-        'Cross-Platform Mobile Development',
-        'UX-Design für E-Commerce-Anwendungen',
-      ],
-    },
-  },
-  {
     slug: 'polutec-webseite',
     title: 'Polutec Firmenwebseite',
     description:
       'Konzeption und Entwicklung einer professionellen Firmenwebseite für Polutec (Frankreich).',
     tech: ['Web', 'HTML/CSS', 'JavaScript'],
     image: 'https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=600&h=400&fit=crop',
-    github: 'https://github.com/JosieCarine',
     details: {
       overview: 'Konzeption und Entwicklung einer professionellen Firmenwebseite für Polutec in Frankreich.',
       whatIDid: [

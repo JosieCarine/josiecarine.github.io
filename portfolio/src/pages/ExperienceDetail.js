@@ -58,11 +58,26 @@ export default function ExperienceDetail() {
           </button>
 
           <div className="experience-detail__header">
-            <img
-              src={exp.image}
-              alt={`${exp.company} cover`}
-              className="experience-detail__image"
-            />
+            {exp.headerMedia?.type === 'video' ? (
+              <video
+                className="experience-detail__media"
+                poster={exp.headerMedia.poster || exp.image}
+                autoPlay
+                muted
+                loop
+                playsInline
+                controls
+              >
+                <source src={exp.headerMedia.src} type="video/mp4" />
+                Ihr Browser unterstützt das Video-Format nicht.
+              </video>
+            ) : (
+              <img
+                src={exp.image}
+                alt={`${exp.company} cover`}
+                className="experience-detail__image"
+              />
+            )}
 
             <div className="experience-detail__header-content">
               <h1 className="experience-detail__title">

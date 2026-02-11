@@ -26,21 +26,19 @@
 
 .navbar__logo {
   text-decoration: none;
-  font-weight: 800;
-  font-size: 1.5rem;
+  display: flex;
+  align-items: center;
 }
 
-.navbar__logo-initials {
-  display: inline-block;
-  color: #a3e635;
-  text-shadow: 0 0 20px rgba(163, 230, 53, 0.5);
-  transition: all 0.3s ease;
+.navbar__logo-img {
+  height: 40px;
+  width: auto;
+  transition: transform 0.3s ease, filter 0.3s ease;
 }
 
-.navbar__logo:hover .navbar__logo-initials {
-  color: #c6f046;
-  text-shadow: 0 0 30px rgba(163, 230, 53, 0.8);
+.navbar__logo:hover .navbar__logo-img {
   transform: scale(1.05);
+  filter: drop-shadow(0 0 10px rgba(163, 230, 53, 0.4));
 }
 
 .navbar__links {
@@ -52,12 +50,15 @@
 }
 
 .navbar__link {
+  background: none;
+  border: none;
+  padding: 0.25rem 0;
+  font: inherit;
+  cursor: pointer;
   color: rgba(255, 255, 255, 0.85);
-  text-decoration: none;
   font-weight: 500;
   font-size: 0.95rem;
   position: relative;
-  padding: 0.25rem 0;
   transition: color 0.3s ease;
 }
 

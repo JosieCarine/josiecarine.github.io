@@ -1,40 +1,51 @@
 import { useState, useEffect } from 'react';
+import { Link, useLocation, useNavigate } from 'react-router-dom';
 import { motion } from 'framer-motion';
 import './Navbar.css';
 
 const navLinks = [
-  { href: '#home', label: 'Home' },
-  { href: '#about', label: 'About' },
-  { href: '#skills', label: 'Skills' },
-  { href: '#projects', label: 'Projects' },
-  { href: '#experience', label: 'Experience' },
-  { href: '#contact', label: 'Contact' },
+  { section: 'home', label: 'Home' },
+  { section: 'about', label: 'About' },
+  { section: 'skills', label: 'Skills' },
+  { section: 'projects', label: 'Projects' },
+  { section: 'experience', label: 'Experience' },
+  { section: 'contact', label: 'Contact' },
 ];
 
 function Navbar() {
   const [activeSection, setActiveSection] = useState('home');
   const [scrolled, setScrolled] = useState(false);
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+  const location = useLocation();
+  const navigate = useNavigate();
+  const isHome = location.pathname === '/';
 
   useEffect(() => {
     const handleScroll = () => {
       setScrolled(window.scrollY > 50);
-      const sections = navLinks.map((link) => link.href.slice(1));
-      for (let i = sections.length - 1; i >= 0; i--) {
-        const section = document.getElementById(sections[i]);
-        if (section && section.getBoundingClientRect().top <= 150) {
-          setActiveSection(sections[i]);
-          break;
+      if (isHome) {
+        const sections = navLinks.map((link) => link.section);
+        for (let i = sections.length - 1; i >= 0; i--) {
+          const section = document.getElementById(sections[i]);
+          if (section && section.getBoundingClientRect().top <= 150) {
+            setActiveSection(sections[i]);
+            break;
+          }
         }
       }
     };
     window.addEventListener('scroll', handleScroll);
     handleScroll();
     return () => window.removeEventListener('scroll', handleScroll);
-  }, []);
+  }, [isHome]);
 
-  const handleLinkClick = (e) => {
+  const handleLinkClick = (section) => {
     setMobileMenuOpen(false);
+    if (!isHome) {
+      navigate('/', { state: { scrollTo: section } });
+    } else {
+      document.getElementById(section)?.scrollIntoView({ behavior: 'smooth' });
+    }
   };
 
   return (
@@ -45,9 +56,9 @@ function Navbar() {
       transition={{ duration: 0.5, ease: 'easeOut' }}
     >
       <div className="navbar__container">
-        <a href="#home" className="navbar__logo" onClick={handleLinkClick}>
-          <span className="navbar__logo-initials">JC</span>
-        </a>
+        <Link to="/" className="navbar__logo" onClick={() => setMobileMenuOpen(false)}>
+          <img src={`${process.env.PUBLIC_URL}/logo.png`} alt="Josie Carine" className="navbar__logo-img" />
+        </Link>
 
         <button
           className="navbar__toggle"
@@ -60,15 +71,14 @@ function Navbar() {
         </button>
 
         <ul className={`navbar__links ${mobileMenuOpen ? 'navbar__links--open' : ''}`}>
-          {navLinks.map(({ href, label }) => (
-            <li key={href}>
-              <a
-                href={href}
-                className={`navbar__link ${activeSection === href.slice(1) ? 'navbar__link--active' : ''}`}
-                onClick={handleLinkClick}
+          {navLinks.map(({ section, label }) => (
+            <li key={section}>
+              <button
+                className={`navbar__link ${activeSection === section ? 'navbar__link--active' : ''}`}
+                onClick={() => handleLinkClick(section)}
               >
                 {label}
-              </a>
+              </button>
             </li>
           ))}
         </ul>

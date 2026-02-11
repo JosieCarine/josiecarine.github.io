@@ -86,6 +86,25 @@
   align-self: flex-start;
 }
 
+.contact__submit[disabled] {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+.contact__status {
+  margin: 0.5rem 0 0;
+  font-size: 0.9rem;
+  line-height: 1.5;
+}
+
+.contact__status--success {
+  color: #a3e635;
+}
+
+.contact__status--error {
+  color: #f87171;
+}
+
 .contact__info {
   padding: 2rem;
   background: rgba(255, 255, 255, 0.03);

@@ -1,0 +1,166 @@
+.experience-detail {
+  min-height: 100vh;
+  padding: 8rem 2rem 4rem;
+  position: relative;
+}
+
+.experience-detail__grid {
+  position: absolute;
+  inset: 0;
+  background-image:
+    linear-gradient(rgba(163, 230, 53, 0.02) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(163, 230, 53, 0.02) 1px, transparent 1px);
+  background-size: 60px 60px;
+  pointer-events: none;
+}
+
+.experience-detail__container {
+  max-width: 800px;
+  margin: 0 auto;
+  position: relative;
+  z-index: 1;
+}
+
+.experience-detail__back {
+  display: inline-block;
+  background: none;
+  border: none;
+  padding: 0;
+  font: inherit;
+  color: #a3e635;
+  cursor: pointer;
+  font-weight: 600;
+  margin-bottom: 2rem;
+  transition: transform 0.3s ease;
+}
+
+.experience-detail__back:hover {
+  transform: translateX(-4px);
+}
+
+.experience-detail__header {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 2rem;
+  align-items: start;
+  margin-bottom: 3rem;
+}
+
+.experience-detail__image {
+  width: 100%;
+  height: auto;
+  border-radius: 12px;
+  border: 1px solid rgba(163, 230, 53, 0.2);
+  object-fit: cover;
+}
+
+.experience-detail__header-content {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+.experience-detail__title {
+  font-size: 1.75rem;
+  font-weight: 800;
+  color: #fff;
+  margin: 0;
+}
+
+.experience-detail__meta{
+  margin: 0;
+  color: rgba(255,255,255,0.75);
+}
+
+.experience-detail__tech {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}
+
+.experience-detail__tech-tag {
+  font-size: 0.8rem;
+  padding: 0.35rem 0.7rem;
+  background: rgba(163, 230, 53, 0.15);
+  color: #a3e635;
+  border-radius: 8px;
+  font-weight: 500;
+}
+
+.experience-detail__content {
+  background: rgba(255, 255, 255, 0.03);
+  backdrop-filter: blur(12px);
+  border: 1px solid rgba(163, 230, 53, 0.15);
+  border-radius: 20px;
+  padding: 2rem;
+}
+
+.experience-detail__section {
+  margin-bottom: 2rem;
+}
+
+.experience-detail__section:last-child {
+  margin-bottom: 0;
+}
+
+.experience-detail__section h2 {
+  font-size: 1.2rem;
+  font-weight: 700;
+  color: #a3e635;
+  margin: 0 0 1rem 0;
+}
+
+.experience-detail__section p {
+  color: rgba(255, 255, 255, 0.85);
+  line-height: 1.8;
+  margin: 0;
+}
+
+.experience-detail__section ul {
+  margin: 0;
+  padding-left: 1.5rem;
+  color: rgba(255, 255, 255, 0.85);
+  line-height: 1.8;
+}
+
+.experience-detail__section li {
+  margin-bottom: 0.5rem;
+}
+
+.experience-detail__section li::marker {
+  color: #a3e635;
+}
+
+.experience-detail__gallery{
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 1rem;
+  margin-top: 1rem;
+}
+
+.experience-detail__gallery img{
+  width: 100%;
+  border-radius: 12px;
+  border: 1px solid rgba(163, 230, 53, 0.18);
+  box-shadow: 0 12px 30px rgba(0,0,0,0.35);
+  transition: transform .25s ease;
+  object-fit: cover;
+}
+
+.experience-detail__gallery img:hover{
+  transform: translateY(-4px);
+}
+
+@media (max-width: 768px) {
+  .experience-detail__header {
+    grid-template-columns: 1fr;
+  }
+
+  .experience-detail {
+    padding: 7rem 1.5rem 3rem;
+  }
+
+  .experience-detail__gallery{
+    grid-template-columns: 1fr;
+  }
+}

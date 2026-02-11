@@ -110,37 +110,26 @@
 
 .hero__image-wrapper {
   position: relative;
+  background: rgba(255, 255, 255, 0.05);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid rgba(163, 230, 53, 0.15);
+  border-radius: 4px;
+  overflow: hidden;
 }
 
 .hero__image {
-  width: 260px;
-  height: 260px;
-  border-radius: 50%;
+  width: 280px;
+  height: 350px;
   object-fit: cover;
   position: relative;
   z-index: 2;
 }
 
-.hero__image--placeholder {
-  background: linear-gradient(135deg, rgba(163, 230, 53, 0.2), rgba(132, 204, 22, 0.1));
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  border: 3px solid rgba(163, 230, 53, 0.4);
-}
-
-.hero__initials {
-  font-size: 4rem;
-  font-weight: 800;
-  color: #a3e635;
-  text-shadow: 0 0 40px rgba(163, 230, 53, 0.5);
-}
-
 .hero__glow {
   position: absolute;
-  inset: -20px;
-  border-radius: 50%;
-  background: radial-gradient(circle, rgba(163, 230, 53, 0.15) 0%, transparent 70%);
+  inset: -16px;
+  background: linear-gradient(135deg, rgba(163, 230, 53, 0.1) 0%, transparent 50%);
   z-index: 1;
   animation: pulse-glow 3s ease-in-out infinite;
 }

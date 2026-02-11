@@ -1,29 +1,7 @@
-import { motion } from 'framer-motion';
-import './Experience.css';
-
-const experiences = [
-  {
-    role: 'Werkstudentin Software Engineering',
-    company: 'Hermann Ultraschall',
-    location: 'Ittersbach',
-    date: '12/2023 – 03/2024',
-    description: [
-      'Entwicklung eines Benutzerinterfaces mit Elixir und Phoenix LiveView',
-      'Mitarbeit an Visualisierungs- und Bedienkonzepten für industrielle Anwendungen',
-    ],
-  },
-  {
-    role: 'Softwareentwicklerin (Projektarbeit)',
-    company: 'AtelierBlau',
-    location: 'Worms',
-    date: '02/2025 – 04/2025',
-    description: [
-      'Optimierung und Weiterentwicklung einer bestehenden Unternehmenswebseite',
-      'Umsetzung interaktiver UI-Elemente und Animationen',
-      'Mitarbeit in einem kleinen Entwicklungsteam nach Scrum',
-    ],
-  },
-];
+import { Link } from "react-router-dom";
+import { motion } from "framer-motion";
+import { experiencesData } from "../data/experiencesData";
+import "./Experience.css";
 
 function Experience() {
   return (
@@ -33,14 +11,15 @@ function Experience() {
         className="experience__container"
         initial={{ opacity: 0, y: 40 }}
         whileInView={{ opacity: 1, y: 0 }}
-        viewport={{ once: true, margin: '-100px' }}
+        viewport={{ once: true, margin: "-100px" }}
         transition={{ duration: 0.6 }}
       >
         <h2 className="section-title">Berufserfahrung</h2>
+
         <div className="experience__timeline">
-          {experiences.map((exp, i) => (
+          {experiencesData.map((exp, i) => (
             <motion.article
-              key={exp.company + exp.date}
+              key={exp.slug}
               className="experience__card"
               initial={{ opacity: 0, x: i % 2 === 0 ? -30 : 30 }}
               whileInView={{ opacity: 1, x: 0 }}
@@ -55,11 +34,19 @@ function Experience() {
                   {exp.company} · {exp.location}
                 </p>
               </div>
-              <ul className="experience__list">
-                {exp.description.map((item, j) => (
-                  <li key={j}>{item}</li>
-                ))}
-              </ul>
+
+              {exp.details?.whatIDid && (
+                <ul className="experience__list">
+                  {exp.details.whatIDid.slice(0, 2).map((item, j) => (
+                    <li key={j}>{item}</li>
+                  ))}
+                </ul>
+              )}
+
+              {/* bouton en bas, comme Projects */}
+              <Link to={`/erfahrung/${exp.slug}`} className="experience__btn">
+                Mehr erfahren →
+              </Link>
             </motion.article>
           ))}
         </div>

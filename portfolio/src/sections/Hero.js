@@ -35,7 +35,7 @@ function Hero() {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5, delay: 0.2 }}
           >
-            Software Developer | Web & Full-Stack
+            Software Developer | Informatik-Absolventin
           </motion.p>
           <motion.p
             className="hero__intro"
@@ -43,9 +43,10 @@ function Hero() {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5, delay: 0.3 }}
           >
-            Motivierte Informatik-Absolventin mit fundierten Kenntnissen in
-            Softwareentwicklung, Programmierung und Datenbanksystemen.
-            Spezialisiert auf effiziente, zuverlässige und skalierbare Lösungen.
+            Ich bin Informatik-Absolventin mit internationalem Hintergrund und
+            Abschluss an der Hochschule Worms. Mit Begeisterung entwickle ich
+            strukturierte, zuverlässige und benutzerfreundliche Softwarelösungen
+            im Web- und Full-Stack-Bereich.
           </motion.p>
           <motion.div
             className="hero__buttons"
@@ -56,9 +57,14 @@ function Hero() {
             <a href="#projects" className="btn btn--primary">
               View Projects
             </a>
-            <a href="#contact" className="btn btn--secondary">
-              Contact Me
-            </a>
+            <a
+            href={`${process.env.PUBLIC_URL}/lebenslauf.pdf`}
+            className="btn btn--secondary"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            Lebenslauf ansehen
+          </a>  
           </motion.div>
         </div>
 
@@ -69,9 +75,11 @@ function Hero() {
           transition={{ duration: 0.6, delay: 0.3 }}
         >
           <div className="hero__image-wrapper">
-            <div className="hero__image hero__image--placeholder">
-              <span className="hero__initials">JC</span>
-            </div>
+            <img
+              src={`${process.env.PUBLIC_URL}/profil.png`}
+              alt="Josie Carine"
+              className="hero__image"
+            />
             <div className="hero__glow" aria-hidden="true" />
           </div>
           <motion.div

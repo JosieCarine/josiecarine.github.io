@@ -50,6 +50,19 @@ Le site sera accessible à :
 - `https://josiecarine.github.io` (si repo `josiecarine.github.io`)
 - `https://josiecarine.github.io/portfolio` (si repo `portfolio`)
 
+### 6. Activer le formulaire de contact (Formspree)
+
+1. Crée un formulaire gratuit sur [formspree.io](https://formspree.io) (Plan gratuit : 50 messages/mois).
+2. Copie l’URL fournie (format `https://formspree.io/f/XXXXXXX`).
+3. Duplique le fichier `.env.example` en `.env` et remplace `YOUR_FORM_ID` par ton ID :
+
+   ```bash
+   cp .env.example .env
+   # ouvrir .env puis mettre ta vraie URL
+   ```
+
+4. Redémarre `npm start`. Le formulaire enverra désormais directement les messages à ton adresse Formspree.
+
 ---
 
 ## Getting Started with Create React App

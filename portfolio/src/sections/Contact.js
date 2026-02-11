@@ -7,14 +7,46 @@ const socialLinks = [
   { href: 'https://www.linkedin.com/in/josie-carine-ngaha-nana-659a93202/', label: 'LinkedIn', icon: '↗' },
 ];
 
+const FORMSPREE_ENDPOINT = process.env.REACT_APP_FORMSPREE_ENDPOINT || '';
+
 function Contact() {
   const [formData, setFormData] = useState({ name: '', email: '', message: '' });
+  const [status, setStatus] = useState({ state: 'idle', message: '' });
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
-    const mailto = `mailto:carinengaha@gmail.com?subject=Portfolio Kontakt von ${encodeURIComponent(formData.name)}&body=${encodeURIComponent(formData.message)}`;
-    window.location.href = mailto;
-    setFormData({ name: '', email: '', message: '' });
+    if (!FORMSPREE_ENDPOINT) {
+      setStatus({
+        state: 'error',
+        message: 'Formular-Endpunkt nicht konfiguriert. Bitte Formspree-ID hinterlegen.',
+      });
+      return;
+    }
+
+    setStatus({ state: 'loading', message: 'Nachricht wird gesendet …' });
+
+    try {
+      const response = await fetch(FORMSPREE_ENDPOINT, {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+          Accept: 'application/json',
+        },
+        body: JSON.stringify(formData),
+      });
+
+      if (!response.ok) {
+        throw new Error('Formspree send error');
+      }
+
+      setStatus({ state: 'success', message: 'Danke für deine Nachricht! Ich melde mich zeitnah.' });
+      setFormData({ name: '', email: '', message: '' });
+    } catch (error) {
+      setStatus({
+        state: 'error',
+        message: 'Senden fehlgeschlagen. Bitte versuche es später erneut.',
+      });
+    }
   };
 
   const handleChange = (e) => {
@@ -83,9 +115,21 @@ function Contact() {
                 placeholder="Ihre Nachricht..."
               />
             </div>
-            <button type="submit" className="btn btn--primary contact__submit">
-              Nachricht senden
+            <button
+              type="submit"
+              className="btn btn--primary contact__submit"
+              disabled={status.state === 'loading'}
+            >
+              {status.state === 'loading' ? 'Sende …' : 'Nachricht senden'}
             </button>
+            {status.message && (
+              <p
+                className={`contact__status contact__status--${status.state}`}
+                role={status.state === 'error' ? 'alert' : 'status'}
+              >
+                {status.message}
+              </p>
+            )}
           </motion.form>
 
           <motion.div

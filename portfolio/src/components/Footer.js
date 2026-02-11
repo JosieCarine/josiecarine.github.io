@@ -12,6 +12,7 @@ function Footer() {
       viewport={{ once: true }}
     >
       <div className="footer__container">
+        <img src={`${process.env.PUBLIC_URL}/logo.png`} alt="Josie Carine" className="footer__logo" />
         <p className="footer__copyright">
           © {currentYear} Josie Carine. Alle Rechte vorbehalten.
         </p>
